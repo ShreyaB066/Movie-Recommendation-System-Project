@@ -38,7 +38,44 @@ def search_movies(title):
     return results if not results.empty else None
 
 # Streamlit interface
-st.title("🎥 Movie Maze ")
+st.set_page_config(
+    page_title="🎥 Movie Maze",
+    page_icon="🎥",
+    layout="wide"
+)
+
+st.title("🎥 Movie Maze")
+st.markdown("""
+<style>
+    body {
+        background-color: #0f0f0f;
+        color: #f0f0f0;
+        font-family: 'Roboto', sans-serif;
+    }
+    .stButton > button {
+        background-color: #FF6F61;
+        color: white;
+        font-weight: bold;
+    }
+    .stTextInput > div > div > input {
+        background-color: #2c2c2c;
+        color: white;
+        border: 2px solid #FF6F61;
+    }
+    .stTable > div > div > table {
+        background-color: #1c1c1c;
+        color: white;
+        border-radius: 10px;
+    }
+    .stTable > div > div > table th, 
+    .stTable > div > div > table td {
+        padding: 10px;
+    }
+    .stSpinner > div > div > div > div {
+        color: #FF6F61;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 movie_input = st.text_input("Enter Movie Title:", value='Toy Story')
 
